@@ -76,14 +76,38 @@
 			isa = PBXGroup;
 			children = (
 				2F22EE281D5D3B5D009785E9 /* AppDelegate.swift */,
-				2F22EE2A1D5D3B5D009785E9 /* ViewController.swift */,
+				2F7090191D5E81E4003DDCB1 /* Controllers */,
+				2F70901B1D5E8226003DDCB1 /* Model */,
+				2F70901A1D5E81F4003DDCB1 /* Resources */,
 				2F22EE2C1D5D3B5D009785E9 /* Main.storyboard */,
-				2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */,
 				2F22EE2F1D5D3B5D009785E9 /* Assets.xcassets */,
 				2F22EE311D5D3B5D009785E9 /* LaunchScreen.storyboard */,
 				2F22EE341D5D3B5D009785E9 /* Info.plist */,
 			);
 			path = GRMaps;
+			sourceTree = "<group>";
+		};
+		2F7090191D5E81E4003DDCB1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F22EE2A1D5D3B5D009785E9 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2F70901A1D5E81F4003DDCB1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2F70901B1D5E8226003DDCB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

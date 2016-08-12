@@ -26,11 +26,17 @@ class ViewController: UIViewController {
         mapView.attributionButton.tintColor = UIColor.grayColor()
         
         
+        
+        
     }
     
    
     
     @IBAction func panToUser() {
+        
+        //print(mapView.userLocation?.coordinate, mapView.zoomLevel, mapView.direction)
+        
+        mapView.setCenterCoordinate((mapView.userLocation?.coordinate)!, zoomLevel: 14.0, direction: 0.0, animated: true)
     }
 }
 
