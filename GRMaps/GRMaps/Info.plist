@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoibWlsbGVyYXBwcyIsImEiOiJjaXJxeHdqMHkwaTRtZjltNmIybmIxNWN2In0.oyVP_paL8jNxT_BPRBn44Q</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,6 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoibWlsbGVyYXBwcyIsImEiOiJjaXJxeHdqMHkwaTRtZjltNmIybmIxNWN2In0.oyVP_paL8jNxT_BPRBn44Q</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This appilcation needs your premission to dispaly your location. </string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -32,6 +34,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

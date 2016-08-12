@@ -14,6 +14,7 @@
 		2F22EE331D5D3B5D009785E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F22EE311D5D3B5D009785E9 /* LaunchScreen.storyboard */; };
 		2F22EE3B1D5D3CC5009785E9 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F22EE3A1D5D3CC5009785E9 /* Mapbox.framework */; };
 		2F22EE3C1D5D3CC5009785E9 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F22EE3A1D5D3CC5009785E9 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F22EE401D5E4BC7009785E9 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22EE3F1D5E4BC7009785E9 /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		2F22EE321D5D3B5D009785E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F22EE341D5D3B5D009785E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F22EE3A1D5D3CC5009785E9 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		2F22EE3F1D5E4BC7009785E9 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				2F22EE281D5D3B5D009785E9 /* AppDelegate.swift */,
 				2F22EE2A1D5D3B5D009785E9 /* ViewController.swift */,
 				2F22EE2C1D5D3B5D009785E9 /* Main.storyboard */,
+				2F22EE3F1D5E4BC7009785E9 /* RoundButton.swift */,
 				2F22EE2F1D5D3B5D009785E9 /* Assets.xcassets */,
 				2F22EE311D5D3B5D009785E9 /* LaunchScreen.storyboard */,
 				2F22EE341D5D3B5D009785E9 /* Info.plist */,
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F22EE401D5E4BC7009785E9 /* RoundButton.swift in Sources */,
 				2F22EE2B1D5D3B5D009785E9 /* ViewController.swift in Sources */,
 				2F22EE291D5D3B5D009785E9 /* AppDelegate.swift in Sources */,
 			);

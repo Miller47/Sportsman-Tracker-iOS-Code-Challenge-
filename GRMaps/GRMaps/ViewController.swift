@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import Mapbox
+
 
 class ViewController: UIViewController {
 
+    @IBOutlet var mapView: MGLMapView!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Setup MapBox MapView Tracking
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .Follow
+        
+        // Chnage Information tint 
+        mapView.attributionButton.tintColor = UIColor.grayColor()
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+   
+    
+    @IBAction func panToUser() {
     }
-
-
 }
 

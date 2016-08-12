@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sF1-NL-OGW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GRMaps" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +18,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MGLMapView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQ4-L1-TqT" customClass="RoundButton" customModule="GRMaps" customModuleProvider="target">
+                                <rect key="frame" x="502" y="454" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2wJ-0H-G7q"/>
+                                    <constraint firstAttribute="width" constant="50" id="us9-w3-NaU"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon-location-set"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwb-Gu-eEb" customClass="RoundButton" customModule="GRMaps" customModuleProvider="target">
+                                <rect key="frame" x="502" y="512" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.65098039220000004" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="TUs-V0-tVd"/>
+                                    <constraint firstAttribute="height" constant="50" id="kfw-T0-Hhl"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon-location-add"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="panToUser" destination="BYZ-38-t0r" eventType="touchUpInside" id="zkK-Lo-R1X"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nwb-Gu-eEb" secondAttribute="bottom" constant="38" id="D4V-fe-b3T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oQ4-L1-TqT" secondAttribute="trailing" constant="28" id="Ktf-99-OAO"/>
+                            <constraint firstItem="oQ4-L1-TqT" firstAttribute="leading" secondItem="nwb-Gu-eEb" secondAttribute="leading" id="YSZ-Cu-Wtz"/>
+                            <constraint firstItem="nwb-Gu-eEb" firstAttribute="top" secondItem="oQ4-L1-TqT" secondAttribute="bottom" constant="8" symbolic="YES" id="bkV-Gk-751"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="WhH-jt-MuB"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Explore" id="mlQ-1B-VoX">
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon-layers" id="urE-Ge-3iF">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                            <barButtonItem image="icon-search" id="9Hq-Fg-G4r">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="8bC-Xf-vdC" id="hwh-O3-OoH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1092" y="1014"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wIK-TY-52s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sF1-NL-OGW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dMl-xM-F2F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.074509803921568626" green="0.65098039215686276" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="202-Dx-HvC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHy-bS-gbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="1014"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-layers" width="24" height="24"/>
+        <image name="icon-location-add" width="24" height="24"/>
+        <image name="icon-location-set" width="24" height="24"/>
+        <image name="icon-search" width="24" height="24"/>
+    </resources>
 </document>
