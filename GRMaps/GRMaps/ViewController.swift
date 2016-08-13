@@ -13,14 +13,19 @@ import Mapbox
 class ViewController: UIViewController {
 
     @IBOutlet var mapView: MGLMapView!
+    
    
     
+    // MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup MapBox MapView Tracking
-        mapView.showsUserLocation = true
-        mapView.userTrackingMode = .Follow
+        self.mapView.showsUserLocation = true
+        self.mapView.userTrackingMode = .Follow
+        
+        
+        
         
         // Chnage Information tint 
         mapView.attributionButton.tintColor = UIColor.grayColor()
@@ -30,13 +35,18 @@ class ViewController: UIViewController {
         
     }
     
+
+    
    
+    // MARK: IBActions
     
     @IBAction func panToUser() {
         
         //print(mapView.userLocation?.coordinate, mapView.zoomLevel, mapView.direction)
         
-        mapView.setCenterCoordinate((mapView.userLocation?.coordinate)!, zoomLevel: 14.0, direction: 0.0, animated: true)
+        self.mapView.setCenterCoordinate((mapView.userLocation?.coordinate)!, zoomLevel: 14.0, direction: 0.0, animated: true)
+        // Sets userTrackingMode back to .Follow
+        self.mapView.userTrackingMode = .Follow
     }
 }
 
