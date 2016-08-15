@@ -42,11 +42,17 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     
     @IBAction func panToUser() {
         
-        //print(mapView.userLocation?.coordinate, mapView.zoomLevel, mapView.direction)
         
-        self.mapView.setCenterCoordinate((mapView.userLocation?.coordinate)!, zoomLevel: 14.0, direction: 0.0, animated: true)
         // Sets userTrackingMode back to .Follow
         self.mapView.userTrackingMode = .Follow
+        
+        self.mapView.setCenterCoordinate((self.mapView.userLocation?.coordinate)!, zoomLevel: 14.0, direction: 0.0, animated: true) {
+            
+            // Ensure that mapview has a heading of 0
+            self.mapView.resetNorth()
+        }
+        
+        
     }
     
     @IBAction func placeMarker() {

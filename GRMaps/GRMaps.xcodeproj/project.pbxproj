@@ -17,6 +17,7 @@
 		2F22EE401D5E4BC7009785E9 /* MARoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */; };
 		2F70901D1D60E83C003DDCB1 /* CrossHair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F70901C1D60E83C003DDCB1 /* CrossHair.swift */; };
 		2F7090211D612D38003DDCB1 /* CrossHairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7090201D612D38003DDCB1 /* CrossHairView.swift */; };
+		2FBA3E1D1D61BA31002516E8 /* MapData in Resources */ = {isa = PBXBuildFile; fileRef = 2FBA3E1C1D61BA31002516E8 /* MapData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MARoundButton.swift; sourceTree = "<group>"; };
 		2F70901C1D60E83C003DDCB1 /* CrossHair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossHair.swift; sourceTree = "<group>"; };
 		2F7090201D612D38003DDCB1 /* CrossHairView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossHairView.swift; sourceTree = "<group>"; };
+		2FBA3E1C1D61BA31002516E8 /* MapData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MapData; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		2F70901A1D5E81F4003DDCB1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FBA3E1C1D61BA31002516E8 /* MapData */,
 				2F70901C1D60E83C003DDCB1 /* CrossHair.swift */,
 				2F7090201D612D38003DDCB1 /* CrossHairView.swift */,
 				2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */,
@@ -179,6 +182,7 @@
 				2F22EE331D5D3B5D009785E9 /* LaunchScreen.storyboard in Resources */,
 				2F22EE301D5D3B5D009785E9 /* Assets.xcassets in Resources */,
 				2F22EE2E1D5D3B5D009785E9 /* Main.storyboard in Resources */,
+				2FBA3E1D1D61BA31002516E8 /* MapData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

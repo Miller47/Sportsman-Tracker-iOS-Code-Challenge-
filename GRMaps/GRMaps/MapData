@@ -1,0 +1,44 @@
+{
+  "places": [
+    {
+      "location": "42.959710, -85.660529",
+      "name": "Beijing Kitchen"
+    },
+    {
+      "location": "42.961202, -85.648173",
+      "name": "Lafontsee Galleries"
+    },
+    {
+      "location": "42.959419, -85.647120",
+      "name": "Richard App Gallery"
+    },
+    {
+      "location": "42.962158, -85.659009",
+      "name": "Peaches Bed & Breakfast"
+    },
+    {
+      "location": "42.959834, -85.646229",
+      "name": "Brewery Vivant"
+    },
+    {
+      "location": "42.962693, -85.645558",
+      "name": "Lightfast Coffee Bar & Art Collective"
+    },
+    {
+      "location": "42.962976, -85.645646",
+      "name": "Spaanstra Bros Automotive"
+    },
+    {
+      "location": "42.955421, -85.651538",
+      "name": "Elk Brewing"
+    },
+    {
+      "location": "42.954330, -85.652455",
+      "name": "Martin Luther King Leadership"
+    },
+    {
+      "location": "42.955486, -85.652278",
+      "name": "The Winchester"
+    }
+  ]
+}
