@@ -10,9 +10,10 @@ import UIKit
 import Mapbox
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MGLMapViewDelegate {
 
     @IBOutlet var mapView: MGLMapView!
+    var point = MGLPointAnnotation()
     
    
     
@@ -25,18 +26,24 @@ class ViewController: UIViewController {
         self.mapView.userTrackingMode = .Follow
         
         
+
+        
         
         
         // Chnage Information tint 
         mapView.attributionButton.tintColor = UIColor.grayColor()
-        
-        
+    
         
         
     }
     
 
-    
+
+    func mapView(mapView: MGLMapView, didUpdateUserLocation userLocation: MGLUserLocation?) {
+//        point.coordinate =  self.mapView.convertPoint(self.mapView.center, toCoordinateFromView: self.mapView)
+//        self.mapView.addAnnotation(point)
+        
+    }
    
     // MARK: IBActions
     
@@ -47,6 +54,14 @@ class ViewController: UIViewController {
         self.mapView.setCenterCoordinate((mapView.userLocation?.coordinate)!, zoomLevel: 14.0, direction: 0.0, animated: true)
         // Sets userTrackingMode back to .Follow
         self.mapView.userTrackingMode = .Follow
+    }
+    
+    @IBAction func placeMarker() {
+        
+        let pointOfInterest = MGLPointAnnotation()
+        pointOfInterest.coordinate = self.mapView.convertPoint(self.mapView.center, toCoordinateFromView: self.mapView)
+        pointOfInterest.title = "Test"
+        mapView.addAnnotation(pointOfInterest)
     }
 }
 

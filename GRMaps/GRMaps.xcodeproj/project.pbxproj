@@ -15,6 +15,8 @@
 		2F22EE3B1D5D3CC5009785E9 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F22EE3A1D5D3CC5009785E9 /* Mapbox.framework */; };
 		2F22EE3C1D5D3CC5009785E9 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F22EE3A1D5D3CC5009785E9 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F22EE401D5E4BC7009785E9 /* MARoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */; };
+		2F70901D1D60E83C003DDCB1 /* CrossHair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F70901C1D60E83C003DDCB1 /* CrossHair.swift */; };
+		2F7090211D612D38003DDCB1 /* CrossHairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7090201D612D38003DDCB1 /* CrossHairView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +43,8 @@
 		2F22EE341D5D3B5D009785E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F22EE3A1D5D3CC5009785E9 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MARoundButton.swift; sourceTree = "<group>"; };
+		2F70901C1D60E83C003DDCB1 /* CrossHair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossHair.swift; sourceTree = "<group>"; };
+		2F7090201D612D38003DDCB1 /* CrossHairView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossHairView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		2F70901A1D5E81F4003DDCB1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F70901C1D60E83C003DDCB1 /* CrossHair.swift */,
+				2F7090201D612D38003DDCB1 /* CrossHairView.swift */,
 				2F22EE3F1D5E4BC7009785E9 /* MARoundButton.swift */,
 			);
 			name = Resources;
@@ -199,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F7090211D612D38003DDCB1 /* CrossHairView.swift in Sources */,
+				2F70901D1D60E83C003DDCB1 /* CrossHair.swift in Sources */,
 				2F22EE401D5E4BC7009785E9 /* MARoundButton.swift in Sources */,
 				2F22EE2B1D5D3B5D009785E9 /* ViewController.swift in Sources */,
 				2F22EE291D5D3B5D009785E9 /* AppDelegate.swift in Sources */,

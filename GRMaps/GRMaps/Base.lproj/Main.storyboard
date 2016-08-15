@@ -19,6 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNf-XT-zWG" customClass="CrossHairView" customModule="GRMaps" customModuleProvider="target">
+                                <rect key="frame" x="286" y="285" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fHa-YG-kdY"/>
+                                    <constraint firstAttribute="width" constant="30" id="qsY-Gj-h3l"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQ4-L1-TqT" customClass="MARoundButton" customModule="GRMaps" customModuleProvider="target">
                                 <rect key="frame" x="502" y="454" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,14 +74,18 @@
                                         <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="placeMarker" destination="BYZ-38-t0r" eventType="touchUpInside" id="bM9-db-hih"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nwb-Gu-eEb" secondAttribute="bottom" constant="38" id="D4V-fe-b3T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oQ4-L1-TqT" secondAttribute="trailing" constant="28" id="Ktf-99-OAO"/>
                             <constraint firstItem="oQ4-L1-TqT" firstAttribute="leading" secondItem="nwb-Gu-eEb" secondAttribute="leading" id="YSZ-Cu-Wtz"/>
                             <constraint firstItem="nwb-Gu-eEb" firstAttribute="top" secondItem="oQ4-L1-TqT" secondAttribute="bottom" constant="8" symbolic="YES" id="bkV-Gk-751"/>
+                            <constraint firstItem="lNf-XT-zWG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pSj-tc-gFn"/>
+                            <constraint firstItem="lNf-XT-zWG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="sbm-pL-3aq"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
