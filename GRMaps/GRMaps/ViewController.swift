@@ -25,17 +25,23 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         self.mapView.showsUserLocation = true
         self.mapView.userTrackingMode = .Follow
         
+        
         setTintColors()
         
     }
     
+    
     // MARK: Tint Colors
     func setTintColors() {
+        
         // Change Information, UIButtons tint
+        // Called again when UIAlertController actions are tapped
+        // works around a bug with tintColor changing to the tintColor of the MGLMapView
         
         self.mapView.attributionButton.tintColor = UIColor.grayColor()
         self.addAnotationBtn.tintColor = UIColor.whiteColor()
         self.panBtn.tintColor = UIColor.lightGrayColor()
+        
     }
     
     // MARK: IBActions
@@ -66,7 +72,10 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             textField.addTarget(self, action: #selector(self.textChanged), forControlEvents: .EditingChanged)
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in
+            
+            self.setTintColors()
+        }
         
         let doneAction = UIAlertAction(title: "Done", style: .Default) { (_) in
             
@@ -78,14 +87,18 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             self.mapView.addAnnotation(pointOfInterest)
             
             
+            self.setTintColors()
             
         }
+        
         
         
         alert.addAction(cancelAction)
         alert.addAction(doneAction)
         alert.actions[1].enabled = false
         alert.view.setNeedsLayout()
+        
+        
         self.presentViewController(alert, animated: true, completion: nil)
         
     }
@@ -104,6 +117,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         alert.actions[1].enabled = (tField.text != "")
         
     }
+    
     
   
 }
