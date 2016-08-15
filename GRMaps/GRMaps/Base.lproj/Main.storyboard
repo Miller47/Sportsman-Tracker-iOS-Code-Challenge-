@@ -108,7 +108,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addAnotationBtn" destination="nwb-Gu-eEb" id="pI0-NC-UK3"/>
                         <outlet property="mapView" destination="8bC-Xf-vdC" id="hwh-O3-OoH"/>
+                        <outlet property="panBtn" destination="oQ4-L1-TqT" id="ryU-1Z-dH8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
