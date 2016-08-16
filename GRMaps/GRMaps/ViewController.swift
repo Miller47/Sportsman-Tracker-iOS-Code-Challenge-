@@ -16,6 +16,8 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var panBtn: MARoundButton!
     @IBOutlet weak var addAnotationBtn: MARoundButton!
     
+    var places: [GRLocations] = []
+    
     
     // MARK: View
     override func viewDidLoad() {
@@ -25,10 +27,12 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         self.mapView.showsUserLocation = true
         self.mapView.userTrackingMode = .Follow
         
-        
         setTintColors()
+        getJsonForPloting()
+        
         
     }
+    
     
     
     // MARK: Tint Colors
@@ -44,6 +48,71 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         
     }
     
+    // MARK: Plot Pins
+    
+    func getJsonForPloting() {
+        
+        // Get ref to local JSON file
+        if let path = NSBundle.mainBundle().pathForResource("MapData", ofType: "json") {
+            
+            print(path)
+            do {
+                
+                let data = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                
+                if let locations = json["places"] as? [[String: AnyObject]] {
+                    for place in locations {
+                        if let lat = place["lat"], long = place["long"], name = place["name"]  {
+                            let placeCoord = CLLocationCoordinate2DMake(lat as! Double, long as! Double)
+                            let placeName = name as! String
+                            
+                            let location = GRLocations(coordinates: placeCoord, name: placeName)
+                            
+                            // Append loctions to plces Array
+                            places.append(location)
+                            
+                            print("Name: \(placeName), Coords: \(placeCoord)")
+                            
+                        }
+                    }
+                }
+                
+                
+                
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+        poltPins()
+    }
+    
+    
+
+    
+    func poltPins() {
+        
+        // Plot Annotation based on coordinates from JSON
+        // Loop through places to egt all locations
+        for place in places {
+            
+            let coordinates = place.coordinates
+            let name = place.name
+            
+            // Create Annotation
+            let annotation = CustomAnotation(coordinate: coordinates, title: name, subtitle: nil)
+            
+            // Set reuseIdentifer and image
+            annotation.reuseIdentifier = "pin"
+            annotation.image = UIImage(named: "pin-poi")
+            
+            self.mapView.addAnnotation(annotation)
+        }
+        
+    }
+    
     // MARK: IBActions
     
     @IBAction func panToUser() {
@@ -56,6 +125,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             
             // Ensure that mapview has a heading of 0
             self.mapView.resetNorth()
+
         }
         
         
