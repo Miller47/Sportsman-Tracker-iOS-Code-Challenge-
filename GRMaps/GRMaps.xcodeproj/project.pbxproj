@@ -18,6 +18,8 @@
 		2F70901D1D60E83C003DDCB1 /* CrossHair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F70901C1D60E83C003DDCB1 /* CrossHair.swift */; };
 		2F7090211D612D38003DDCB1 /* CrossHairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7090201D612D38003DDCB1 /* CrossHairView.swift */; };
 		2FBA3E1D1D61BA31002516E8 /* MapData in Resources */ = {isa = PBXBuildFile; fileRef = 2FBA3E1C1D61BA31002516E8 /* MapData */; };
+		2FBA3E231D62D860002516E8 /* CustomAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA3E221D62D860002516E8 /* CustomAnotation.swift */; };
+		2FBA3E251D62DFF0002516E8 /* GRLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA3E241D62DFF0002516E8 /* GRLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		2F70901C1D60E83C003DDCB1 /* CrossHair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossHair.swift; sourceTree = "<group>"; };
 		2F7090201D612D38003DDCB1 /* CrossHairView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossHairView.swift; sourceTree = "<group>"; };
 		2FBA3E1C1D61BA31002516E8 /* MapData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MapData; sourceTree = "<group>"; };
+		2FBA3E221D62D860002516E8 /* CustomAnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnotation.swift; sourceTree = "<group>"; };
+		2FBA3E241D62DFF0002516E8 /* GRLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRLocations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		2F22EE271D5D3B5D009785E9 /* GRMaps */ = {
 			isa = PBXGroup;
 			children = (
+				2FBA3E211D62D834002516E8 /* MapBox */,
 				2F22EE281D5D3B5D009785E9 /* AppDelegate.swift */,
 				2F7090191D5E81E4003DDCB1 /* Controllers */,
 				2F70901B1D5E8226003DDCB1 /* Model */,
@@ -115,8 +120,17 @@
 		2F70901B1D5E8226003DDCB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2FBA3E241D62DFF0002516E8 /* GRLocations.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		2FBA3E211D62D834002516E8 /* MapBox */ = {
+			isa = PBXGroup;
+			children = (
+				2FBA3E221D62D860002516E8 /* CustomAnotation.swift */,
+			);
+			name = MapBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBA3E231D62D860002516E8 /* CustomAnotation.swift in Sources */,
 				2F7090211D612D38003DDCB1 /* CrossHairView.swift in Sources */,
+				2FBA3E251D62DFF0002516E8 /* GRLocations.swift in Sources */,
 				2F70901D1D60E83C003DDCB1 /* CrossHair.swift in Sources */,
 				2F22EE401D5E4BC7009785E9 /* MARoundButton.swift in Sources */,
 				2F22EE2B1D5D3B5D009785E9 /* ViewController.swift in Sources */,

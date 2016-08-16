@@ -81,9 +81,14 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             
             
             // Add Anotation for user selected location
-            let pointOfInterest = MGLPointAnnotation()
-            pointOfInterest.coordinate = self.mapView.convertPoint(self.mapView.center, toCoordinateFromView: self.mapView)
-            pointOfInterest.title = alert.textFields![0].text
+            let point = self.mapView.convertPoint(self.mapView.center, toCoordinateFromView: self.mapView)
+            let pointTitle = alert.textFields![0].text
+            let pointOfInterest = CustomAnotation(coordinate: point, title: pointTitle, subtitle: nil)
+            
+            // Set Image and reuseIdentifier
+            pointOfInterest.image = UIImage(named: "user-pin")
+            pointOfInterest.reuseIdentifier = "userPoint"
+            
             self.mapView.addAnnotation(pointOfInterest)
             
             
@@ -103,7 +108,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         
     }
     
-  
+    
     func textChanged(sender:AnyObject) {
         
         let tField = sender as! UITextField
@@ -118,7 +123,29 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         
     }
     
+    // MARK: MGLAnotation
     
-  
+    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        
+        if let point = annotation as? CustomAnotation, image = point.image, reuseIdentifer = point.reuseIdentifier {
+            
+            if let annotationImg = mapView.dequeueReusableAnnotationImageWithIdentifier(reuseIdentifer) {
+                // Use previsously created
+                return annotationImg
+            } else {
+                // Create new
+                return MGLAnnotationImage(image: image, reuseIdentifier: reuseIdentifer)
+            }
+            
+        }
+        
+        return nil
+    }
+    
+    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+        
+        return true
+    }
+    
 }
 
