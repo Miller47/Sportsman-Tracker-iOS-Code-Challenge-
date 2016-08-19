@@ -17,6 +17,8 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var addAnotationBtn: MARoundButton!
     
     var places: [GRLocations] = []
+    // Get ref to local JSON file
+    let path = NSBundle.mainBundle().pathForResource("MapData", ofType: "json")
     
     
     // MARK: View
@@ -28,11 +30,11 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         self.mapView.userTrackingMode = .Follow
         
         setTintColors()
-        getJsonForPloting()
+        retriveJSON()
+        plotPins()
         
         
     }
-    
     
     
     // MARK: Tint Colors
@@ -50,49 +52,15 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     
     // MARK: Plot Pins
     
-    func getJsonForPloting() {
+    func retriveJSON() {
         
-        // Get ref to local JSON file
-        if let path = NSBundle.mainBundle().pathForResource("MapData", ofType: "json") {
-            
-            print(path)
-            do {
-                
-                let data = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                
-                if let locations = json["places"] as? [[String: AnyObject]] {
-                    for place in locations {
-                        if let lat = place["lat"], long = place["long"], name = place["name"]  {
-                            let placeCoord = CLLocationCoordinate2DMake(lat as! Double, long as! Double)
-                            let placeName = name as! String
-                            
-                            let location = GRLocations(coordinates: placeCoord, name: placeName)
-                            
-                            // Append loctions to plces Array
-                            places.append(location)
-                            
-                            print("Name: \(placeName), Coords: \(placeCoord)")
-                            
-                        }
-                    }
-                }
-                
-                
-                
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
-        }
-        
-        poltPins()
+        // Gets the data from the Json and set the places array
+        let jsonParseResult = JSONParser.parseJSON(path)
+        let grlocations = GRLocationService()
+        places = grlocations.parseDic(jsonParseResult)
     }
     
-    
-
-    
-    func poltPins() {
+    func plotPins() {
         
         // Plot Annotation based on coordinates from JSON
         // Loop through places to egt all locations
@@ -125,7 +93,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             
             // Ensure that mapview has a heading of 0
             self.mapView.resetNorth()
-
+            
         }
         
         

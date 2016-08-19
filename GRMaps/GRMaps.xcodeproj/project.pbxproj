@@ -20,6 +20,8 @@
 		2FBA3E231D62D860002516E8 /* CustomAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA3E221D62D860002516E8 /* CustomAnotation.swift */; };
 		2FBA3E251D62DFF0002516E8 /* GRLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA3E241D62DFF0002516E8 /* GRLocations.swift */; };
 		2FBA3E2A1D62F0B1002516E8 /* MapData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FBA3E291D62F0B1002516E8 /* MapData.json */; };
+		2FBA3E301D67AB33002516E8 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA3E2F1D67AB33002516E8 /* JSONParser.swift */; };
+		2FD712B51D67BC7B00706C83 /* GRLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD712B41D67BC7B00706C83 /* GRLocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +53,8 @@
 		2FBA3E221D62D860002516E8 /* CustomAnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnotation.swift; sourceTree = "<group>"; };
 		2FBA3E241D62DFF0002516E8 /* GRLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRLocations.swift; sourceTree = "<group>"; };
 		2FBA3E291D62F0B1002516E8 /* MapData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MapData.json; sourceTree = "<group>"; };
+		2FBA3E2F1D67AB33002516E8 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		2FD712B41D67BC7B00706C83 /* GRLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRLocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 		2F70901B1D5E8226003DDCB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2FD712B31D67BC5400706C83 /* LocationService */,
+				2FBA3E2E1D67AAFD002516E8 /* JSONParse */,
 				2FBA3E241D62DFF0002516E8 /* GRLocations.swift */,
 			);
 			name = Model;
@@ -131,6 +137,22 @@
 				2FBA3E221D62D860002516E8 /* CustomAnotation.swift */,
 			);
 			name = MapBox;
+			sourceTree = "<group>";
+		};
+		2FBA3E2E1D67AAFD002516E8 /* JSONParse */ = {
+			isa = PBXGroup;
+			children = (
+				2FBA3E2F1D67AB33002516E8 /* JSONParser.swift */,
+			);
+			name = JSONParse;
+			sourceTree = "<group>";
+		};
+		2FD712B31D67BC5400706C83 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				2FD712B41D67BC7B00706C83 /* GRLocationService.swift */,
+			);
+			name = LocationService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +247,9 @@
 			files = (
 				2FBA3E231D62D860002516E8 /* CustomAnotation.swift in Sources */,
 				2F7090211D612D38003DDCB1 /* CrossHairView.swift in Sources */,
+				2FD712B51D67BC7B00706C83 /* GRLocationService.swift in Sources */,
 				2FBA3E251D62DFF0002516E8 /* GRLocations.swift in Sources */,
+				2FBA3E301D67AB33002516E8 /* JSONParser.swift in Sources */,
 				2F70901D1D60E83C003DDCB1 /* CrossHair.swift in Sources */,
 				2F22EE401D5E4BC7009785E9 /* MARoundButton.swift in Sources */,
 				2F22EE2B1D5D3B5D009785E9 /* ViewController.swift in Sources */,
