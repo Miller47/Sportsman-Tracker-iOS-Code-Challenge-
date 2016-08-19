@@ -56,8 +56,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         
         // Gets the data from the Json and set the places array
         let jsonParseResult = JSONParser.parseJSON(path)
-        let grlocations = GRLocationService()
-        places = grlocations.parseDic(jsonParseResult)
+        places = GRLocationService.parseDic(jsonParseResult)
     }
     
     func plotPins() {

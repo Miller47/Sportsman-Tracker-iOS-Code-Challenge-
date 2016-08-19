@@ -9,9 +9,9 @@
 import Foundation
 import Mapbox
 
-struct GRLocationService {
+public class GRLocationService {
     
-    func parseDic(dic: [String: AnyObject]?) -> [GRLocations] {
+     class func parseDic(dic: [String: AnyObject]?) -> [GRLocations] {
         
         var grLocations: [GRLocations] = []
         
